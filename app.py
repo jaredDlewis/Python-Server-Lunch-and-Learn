@@ -15,19 +15,6 @@ def home():
     '''View that returns a response containing the contents of index.html'''
     return render_template('index.html')
 
-# Dynamic routing using "variable rules." 
-# The variable name in the angle brackets must match the parameter label
-@app.route('/name/<my_name>')
-def greetings(my_name):
-    '''Greet the user by name.'''
-    return 'Welcome ' + my_name + '!'
-
-# Query string parameters can be accessed on flask's request object
-@app.route('/dog')
-def report_dog():
-    '''Return the query parameter pairs in a string'''
-    return f'The dog named {request.values["name"]} is {request.values["age"]}'
-
 # The request body can be accessed with the request object
 @app.route('/cat', methods=['GET', 'POST'])
 def report_cat():
@@ -42,6 +29,19 @@ def report_cat():
             return str_data + ' meow!'
     else:
         return 'Meow!'
+
+# Dynamic routing using "variable rules." 
+# The variable name in the angle brackets must match the parameter label
+@app.route('/name/<my_name>')
+def greetings(my_name):
+    '''Greet the user by name.'''
+    return 'Welcome ' + my_name + '!'
+
+# Query string parameters can be accessed on flask's request object
+@app.route('/dog')
+def report_dog():
+    '''Return the query parameter pairs in a string'''
+    return f'The dog named {request.values["name"]} is {request.values["age"]}'
 
 # To run our application, we need to call the run() function of our application object
 if __name__ == '__main__':
