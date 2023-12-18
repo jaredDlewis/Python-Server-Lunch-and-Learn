@@ -22,12 +22,6 @@ def greetings(my_name):
     '''Greet the user by name.'''
     return 'Welcome ' + my_name + '!'
 
-# Must specify converter if URL argument to the variable rule is not a string datatype
-@app.route('/square/<int:num_to_square>')
-def show_square(num_to_square):
-    '''View that shows the square of the number passed by URL'''
-    return 'Square of ' + str(num_to_square) + ' is: ' + str(num_to_square * num_to_square)
-
 # Query string parameters can be accessed on flask's request object
 @app.route('/dog')
 def report_dog():
