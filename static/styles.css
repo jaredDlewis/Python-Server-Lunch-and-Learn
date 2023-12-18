@@ -1,0 +1,23 @@
+button {
+  margin: 16px;
+}
+
+.blink {
+    animation: blink .5s steps(1, end) infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.off-blink {
+    animation: .25s blink .5s steps(1, end) infinite;
+}
