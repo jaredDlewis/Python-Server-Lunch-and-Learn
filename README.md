@@ -10,5 +10,5 @@ Run the following cli commands from the repository's top level directory:
   - you can check that you are in the correct environment by running `which python`. This prints the path to the Python interpreter executable that will be used when you use the `python` command in the cli. If the executable location you see is in the .venv directory you just created, you are in the correct environment
 - `pip install -r requirements.txt`
   - this will install the dependencies listed in the requirements.txt file. The packages will match the versions that they are "pinned" to in the requirements.txt file.
-- `python3 app.y`
+- `python3 app.py`
   - this runs the flask server! Happy exploring!
